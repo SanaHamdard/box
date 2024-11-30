@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Divs</title>
+    <style>
+        /* Base Styles (Mobile View) */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .box {
+            width: 90%;
+            height: 150px;
+            background-color: #007BFF;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            border-radius: 8px;
+        }
+
+        /* Images (if any in the divs) */
+        img {
+            max-height: 50%;
+            max-width: 100%;
+            object-fit: cover;
+        }
+
+        /* Tablet View (Trigger at 772px) */
+        @media (min-width: 772px) {
+            .container {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .box {
+                width: 45%;
+                /* Adjust divs to 45% of viewport width */
+                height: 30vh;
+                /* Ensure images are no more than 30% of viewport height */
+            }
+
+            img {
+                max-height: 30vh;
+                /* Images no more than 30% of viewport height */
+            }
+        }
+
+        /* Large Screen View (Trigger at 998px) */
+        @media (min-width: 998px) {
+            .box {
+                width: 30%;
+                /* Adjust divs to 30% of viewport width */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
+</body>
+
+</html>
